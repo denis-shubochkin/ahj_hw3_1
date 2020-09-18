@@ -1,39 +1,21 @@
 // TODO: write your code here
-import Goblin from './goblin'
-import Field from './field'
-import State from './state'
+import Goblin from './goblin';
+import Field from './field';
+import State from './state';
 
 let start;
-let field = new Field();
-let goblin = new Goblin(field.cellsCount);
-let state = new State();
-let nGButton = document.querySelector('.new-game-button');
+const field = new Field();
+const goblin = new Goblin(field.cellsCount);
+const state = new State();
+const nGButton = document.querySelector('.new-game-button');
 
-function checkGoblin(event) {
-  event.preventDefault();
-  if(event.target.id==="goblin")
-  {
-    field.clearField();
-    state.refresh();
-    state.emptyTurns = 0;
-    refresh();
-    // clearInterval(start);
-    // start = setInterval(refresh, 1000);
-  }
-}
-
-field.element.addEventListener('click',checkGoblin);
-nGButton.addEventListener('click',newGame);
-
-
-function refresh(){
-  if(state.emptyTurns===goblin.maxMoves)
-  {
+function refresh() {
+  if (state.emptyTurns === goblin.maxMoves) {
     clearInterval(start);
     alert('GameOver!');
     return;
   }
-  state.emptyTurns+=1;
+  state.emptyTurns += 1;
   goblin.changePos();
   field.redraw(goblin.position);
 }
@@ -41,14 +23,29 @@ function refresh(){
 function newGame() {
   state.clear();
   clearInterval(start);
-  state.points=0;
-  state.emptyTurns=0;
+  state.points = 0;
+  state.emptyTurns = 0;
   goblin.position = Math.floor(0 + Math.random() * (field.cellsCount - 1));
   field.redraw(goblin.position);
   state.emptyTurns += 1;
   start = setInterval(refresh, 1000);
 }
 
+
+function checkGoblin(event) {
+  event.preventDefault();
+  if (event.target.id === 'goblin') {
+    field.clearField();
+    state.refresh();
+    state.emptyTurns = 0;
+    refresh();
+    clearInterval(start);
+    start = setInterval(refresh, 1000);
+  }
+}
+
+field.element.addEventListener('click', checkGoblin);
+nGButton.addEventListener('click', newGame);
 
 
 // const startPos = Math.floor(0 + Math.random() * (cellsCount - 1));
@@ -65,7 +62,7 @@ function newGame() {
 //   }
 // }
 
-//insertPic(startPos);
+// insertPic(startPos);
 
 // <img src="https://github.com/netology-code/ahj-homeworks/blob/master/dom/pic/goblin.png?raw=true" alt="goblin" id="goblin" class="goblin">
 // function changePos() {
@@ -78,4 +75,3 @@ function newGame() {
 
 //   insertPic(newPos);
 // }
-

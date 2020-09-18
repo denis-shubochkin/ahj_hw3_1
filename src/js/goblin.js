@@ -1,7 +1,6 @@
 export default class Goblin {
   constructor(cellsCount) {
     this.maxMoves = 5;
-    //this.position;
     this.fieldCelssCount = cellsCount;
   }
 

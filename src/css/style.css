@@ -21,7 +21,7 @@ body {
   display: flex;
   flex-wrap: wrap;
   width: 320px;
-  cursor:  pointer;
+  cursor: url('../pic/1413.png'), default;
 }
 
 .cells {

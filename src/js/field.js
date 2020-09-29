@@ -5,6 +5,8 @@ export default class Field {
     this.cellsCount = this.element.children.length;
   }
 
+ 
+
   clearField() {
     if (document.getElementById('goblin')) {
       document.getElementById('goblin').remove();
@@ -16,7 +18,7 @@ export default class Field {
     this.clearField();
     for (let i = 0; i < this.cells.length; i++) {
       if (i === goblinPosition) {
-        this.cells[i].innerHTML = '<img src="https://github.com/netology-code/ahj-homeworks/blob/master/dom/pic/goblin.png?raw=true" alt="goblin" id="goblin" class="goblin">';
+        this.cells[i].innerHTML = '<img src="src/pic/goblin.png" alt="goblin" id="goblin" class="goblin">';
       }
     }
   }

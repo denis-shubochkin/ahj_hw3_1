@@ -13,14 +13,14 @@ module.exports = {
       {
         test: /\.(gif|png|jpe?g|svg)$/i,
         use: [
-           'file-loader',
-           {
+          'file-loader',
+          {
             loader: 'image-webpack-loader',
-             options: {
-               bypassOnDebug: true, // webpack@1.x
-               disable: true, // webpack@2.x and newer
-             },
-          }
+            options: {
+              bypassOnDebug: true, // webpack@1.x
+              disable: true, // webpack@2.x and newer
+            },
+          },
         ],
       },
       {
@@ -41,7 +41,7 @@ module.exports = {
       {
         test: /\.css$/,
         use: [
-          MiniCssExtractPlugin.loader,  'css-loader',
+          MiniCssExtractPlugin.loader, 'css-loader',
         ],
       },
     ],

@@ -4,7 +4,7 @@ import Field from './field';
 import State from './state';
 
 let start;
-const field = new Field();;
+const field = new Field();
 const goblin = new Goblin(field.cellsCount);
 const state = new State();
 const nGButton = document.querySelector('.new-game-button');

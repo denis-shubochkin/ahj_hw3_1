@@ -5,7 +5,6 @@ export default class Field {
     this.cellsCount = this.element.children.length;
   }
 
- 
 
   clearField() {
     if (document.getElementById('goblin')) {

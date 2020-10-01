@@ -3,6 +3,7 @@ import Goblin from './goblin';
 import Field from './field';
 import State from './state';
 
+
 let start;
 const field = new Field();
 const goblin = new Goblin(field.cellsCount);

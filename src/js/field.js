@@ -1,3 +1,5 @@
+import goblinpath from '../pic/goblin.png'
+
 export default class Field {
   constructor() {
     this.element = document.getElementById('field');
@@ -17,7 +19,7 @@ export default class Field {
     this.clearField();
     for (let i = 0; i < this.cells.length; i++) {
       if (i === goblinPosition) {
-        this.cells[i].innerHTML = '<img src="src/pic/goblin.png" alt="goblin" id="goblin" class="goblin">';
+        this.cells[i].innerHTML = `<img src="${goblinpath}" alt="goblin" id="goblin" class="goblin">`;
       }
     }
   }
